@@ -1,0 +1,22 @@
+.purple {
+		 display: flex;          /* Lines items up horizontally */
+    align-items: center;    /* Centers image and text vertically */
+    gap: 100px;              /* Adds 20px of space between every link */
+}
+h1 {
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: 125;
+	background-color: pink;
+	
+}
+
+body {
+	 background: url('questions.png') repeat center fixed;
+}
+p{ 
+background-color: pink;
+}
+article {
+	background-color: pink;
+}
