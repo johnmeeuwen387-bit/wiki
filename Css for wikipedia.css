@@ -3,20 +3,30 @@
     align-items: center;    /* Centers image and text vertically */
     gap: 100px;              /* Adds 20px of space between every link */
 }
+body {
+	background-image: url('https://i.postimg.cc/fyVcz7r0/questions.png');
+	background-repeat: repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: auto;
+	margin: 0;
+	padding: 20px;
+	font-family: sans-serif;
+}
+article, main, .content {
+	background-color: rgba(255, 192, 203, 0.85);
+	padding: 20px;
+	border-radius: 8px;
+}
 h1 {
 	font-family: sans-serif;
 	font-style: italic;
 	font-weight: 125;
-	background-color: pink;
-	
+	background-color: rgba(255,192,203,0.9);
+	padding: 10px;
+	border-radius: 5px;
 }
-
-body {
-	 background: url('https://i.postimg.cc/fyVcz7r0/questions.png') repeat center fixed;
-}
-p{ 
-background-color: red;
-}
-article {
-	background-color: pink;
+p {
+	background-color: transparent;
+	color: #000;
 }
