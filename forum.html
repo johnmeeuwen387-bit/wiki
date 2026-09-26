@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="talk about the game and possible lore or meanings">
+	<meta name="keywords" content="speaking,community,communication">
+    <title></title>
+	<link rel="stylesheet" href="css for forum.css"> 
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Dsi adventures forum</h1>
+        <p>This forum is for lore and game dicussion of dsi adventures and just hanging while having a fun topic
+</p>
+    </header>
+
+    <!-- New Post Form -->
+    <div class="forum-card">
+        <h3> Have fun! </h3>
+        <form id="forumForm">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <textarea id="content" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit">Publish Post</button>
+        </form>
+    </div>
+
+    <!-- Live Feed -->
+    <div class="forum-card">
+        <h3>Dsi adventures forum</h3>
+        <div id="postsContainer">
+            <!-- Dynamic posts show up here -->
+        </div>
+    </div>
+</div>
+
+<script src="script for forums.js">
+</script>
+</body>
+</html>
