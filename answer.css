@@ -1,4 +1,14 @@
+
 body {
+   background-image: url('https://i.postimg.cc/85zBs6cz/Screenshot-2026-09-25-221654.png')
+      background-position: center;
+   background-attachment: fixed;
+   background-size: auto;
+   margin: 0;
+   padding:20px;
+}
+
+form {
    margin: 15px;
    border-style: solid;
    border-width: 30px;
