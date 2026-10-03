@@ -37,12 +37,12 @@ const resetBtn = document.getElementById('resetBtn');
 const STORAGE_KEY = 'userStoryVote';
 const savedVote = localStorage.getItem(STORAGE_KEY);
 
-// Helper function to freeze all text and radio inputs once voted
+// Helper function to freeze all form controls (inputs, textareas, selects)
 function lockAllInputs() {
   if (!form) return;
-  const inputs = form.querySelectorAll('input');
-  inputs.forEach(input => {
-    input.disabled = true;
+  const controls = form.querySelectorAll('input, textarea, select');
+  controls.forEach(control => {
+    control.disabled = true;
   });
 }
 
@@ -52,10 +52,15 @@ if (savedVote && form && resultDiv && submitBtn) {
     submitBtn.disabled = true;
     lockAllInputs();
     
-    // Attempt to visually re-check the radio option they picked
-    const radioInput = form.querySelector(`input[value="${savedVote}"]`);
+    // Attempt to visually re-check the radio option or fill the text field
+    const radioInput = form.querySelector(`input[value="${CSS.escape(savedVote)}"]`);
     if (radioInput) {
         radioInput.checked = true;
+    } else {
+        const textInput = form.querySelector('input[type="text"], textarea');
+        if (textInput) {
+            textInput.value = savedVote;
+        }
     }
 }
 
@@ -65,12 +70,17 @@ if (form) {
         event.preventDefault(); 
         
         const checkedInput = form.querySelector('input[type="radio"]:checked');
-        const artInput = document.getElementById('art');
+        const textInput = form.querySelector('input[type="text"], textarea');
+        
+        // Grab either the checked radio value, the typed text value, or a fallback default
+        let voteValue = "Submitted";
+        if (checkedInput && checkedInput.value) {
+            voteValue = checkedInput.value;
+        } else if (textInput && textInput.value.trim() !== "") {
+            voteValue = textInput.value.trim();
+        }
         
         if (resultDiv && submitBtn) {
-            // Save whatever radio button or text answer was given
-            const voteValue = checkedInput ? checkedInput.value : (artInput ? artInput.value : "Submitted");
-            
             localStorage.setItem(STORAGE_KEY, voteValue);
             resultDiv.textContent = `Answers recorded successfully!`;
             
