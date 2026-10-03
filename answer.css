@@ -12,3 +12,9 @@ padding: 50px;
    font-style: normal;
    font-weight: 100;
 }
+@import url('https://googleapis.com');
+  label {
+color:red;
+     text-shadow: 2px 2px 4px #ffff00;
+     font-family: 'creepster', system-ui, sams-serif;
+  }
