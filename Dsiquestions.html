@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="question form">
-  <!-- Fixed missing closing quote on the keywords attribute below -->
   <meta name="keywords" content="question,poll,helpful">
   <title>Dsi poll's</title>
   <link rel="stylesheet" href="answer.css">
@@ -15,7 +14,7 @@
   <p>So I know you answered a question before and that was on Wikipedia, but this is a more dedicated poll site.</p>
   <hr>
 
-  <!-- Added id="storyPoll" so JavaScript can find the form -->
+  <!-- FORM 1: REQUIRED QUESTIONS -->
   <form id="storyPoll" enctype="multipart/form-data">
     <fieldset id="better">
       <legend>Do you want to make dsi adventures a better game? Just answer these questions:</legend>
@@ -27,7 +26,6 @@
         <option value="realistic art">realistic art</option>
         <option value="minimalistic art">minimalistic art</option>
       </datalist>
-      
       <hr>
       
       <p>How many endings do you think should be in dsi adventures?:</p> 
@@ -47,60 +45,61 @@
       <label for="doyoulikeDsiadventures"> Do you like horror games: </label>
       <input type="checkbox" id="doyoulikeDsiadventures" required>
       <hr>
+
       <label for="suggestions"> any suggestions for Dsi adventures?: </label>
-      <textarea id="suggestions" rows="5" cols="35">  </textarea>
+      <textarea id="suggestions" rows="5" cols="35"></textarea>
       <hr>
+
       <label for="artupload"> Upload any concept art here: </label>
-      <input type="file" id="artupload" accept="image/*"> <br>
+      <input type="file" id="artupload" accept="image/*"> <br><br>
       
-      <!-- Added id="submitBtn" for the lock functionality -->
-      <button type="submit" id="submitBtn">Submit your answer</button>
-      <!-- Added id="resetBtn" for testing/clearing memory -->
-      <button type="button" id="resetBtn">Reset Poll Memory</button>
+      <!-- SUBMIT & RESET FOR FORM 1 -->
+      <button type="submit" id="submitBtn">Submit Required Answer</button>
+      <button type="button" id="resetBtn">Reset All Memory</button>
     </fieldset>
   </form>
-    <form id="donthaveto" enctype="multipart/form-data">
-    <fieldset id="optional"> <legend> these are optional questions you don't have to answer if you dont want to:</legend> <hr>
+
+  <div id="pollResult" style="margin-top: 15px; font-weight: bold; color: green;"></div>
+
+  <hr style="margin: 30px 0;">
+
+  <!-- FORM 2: OPTIONAL QUESTIONS -->
+  <form id="donthaveto" enctype="multipart/form-data">
+    <fieldset id="optional">
+      <legend> These are optional questions you don't have to answer if you dont want to:</legend>
+      <hr>
+
       <label for="foop"> When do you think the game should release: </label>
       <input type="date" id="foop"> <br> <hr>
-      <label for="characters" min="3" max="10"> how many characters should be in dsi adventures: </label>
-      <input type="number" id="characters"> <br> <hr>
-      <label for="sequel"> Do you think there should be a sequel </label>
-      <label for="yes"> yes </label>
-      <input type="radio" id="yes" value="yes" name="sequel">
-      <label for="sequel"> no </label>
-      <input type="radio" id="yes" value="no" name="sequel"> <br> <hr>
+
+      <label for="characters"> how many characters should be in dsi adventures: </label>
+      <input type="number" id="characters" min="3" max="10"> <br> <hr>
+
+      <p>Do you think there should be a sequel?</p>
+      <input type="radio" id="sequelYes" value="yes" name="sequel">
+      <label for="sequelYes"> yes </label>
+      
+      <input type="radio" id="sequelNo" value="no" name="sequel">
+      <label for="sequelNo"> no </label> <br> <hr>
+
       <label for="assortment"> What other memories should we add to dsi adventures </label>
-      <select> <option value="running away"> When jeremy ran away</option>
+      <select id="assortment" name="assortment">
+        <option value="running away"> When jeremy ran away</option>
         <option value="theaccident"> what happened to his dad and sister </option>
         <option value="playground"> The playground </option>
         <option value="arcade"> The arcade</option>
       </select> <br> <hr>
-       <label for="riddles"> do you think the wiki's riddles are too hard: </label>
-      <textarea id="riddles" rows="5" cols="35"> </textarea>
-      <br>
-      <hr>
-      
-    
-    
-    
-    
-    
-    
+
+      <label for="riddles"> Do you think the wiki's riddles are too hard: </label>
+      <textarea id="riddles" rows="5" cols="35"></textarea> <br> <hr>
+
+      <!-- SUBMIT FOR FORM 2 -->
+      <button type="submit" id="submitBtn2">Submit Optional Answer</button>
     </fieldset>
   </form>
-  
 
-  <!-- Added this div container so JavaScript can display the "You already voted" message -->
-  <div id="pollResult" style="margin-top: 15px; font-weight: bold; color: red;"></div>
+  <div id="optionalResult" style="margin-top: 15px; font-weight: bold; color: green;"></div>
 
-  <!-- Added a placeholder target for your screenshot grid script to prevent errors -->
-  <div id="screenshotGrid"> 
-  </div>
-  
-
-  <!-- Links your JavaScript code file (assumed name: script.js) -->
   <script src="answer.js"></script>
-  <label for="what are you">
 </body>
 </html>
