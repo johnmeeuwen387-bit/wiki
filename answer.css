@@ -1,6 +1,7 @@
 
 body {
-   background-image: url('https://i.postimg.cc/85zBs6cz/Screenshot-2026-09-25-221654.png')
+   background-image: url('https://i.postimg.cc/85zBs6cz/glitchy.png');
+      background-repeat: repeat;
       background-position: center;
    background-attachment: fixed;
    background-size: auto;
