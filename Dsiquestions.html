@@ -15,11 +15,11 @@
   <hr>
 
   <!-- Added id="storyPoll" so JavaScript can find the form -->
-  <form id="storyPoll">
+  <form id="storyPoll" enctype="multipart/form-data">
     <fieldset id="better">
       <legend>Do you want to make dsi adventures a better game? Just answer these questions:</legend>
       
-      <label for="art">:If you had to choose between two art styles would you want </label>  
+      <label for="art">:If you had to choose between two art styles would you want: </label>  
       <input type="text" id="art" list="artstyle" placeholder="abstract art" minlength="10" maxlength="20" required>
       <datalist id="artstyle"> 
         <option value="pixel art">Pixel art</option> 
@@ -29,34 +29,47 @@
       
       <hr>
       
-      <p>How many endings do you think should be in dsi adventures?</p> 
-      <input type="radio" id="ending2" name="endings" value="2 endings">
+      <p>How many endings do you think should be in dsi adventures?:</p> 
+      <input type="radio" id="ending2" name="endings" value="2 endings" required>
       <label for="ending2">2 endings</label> <br>
       
-      <input type="radio" id="ending3" name="endings" value="3 endings">
+      <input type="radio" id="ending3" name="endings" value="3 endings" required>
       <label for="ending3">3 endings</label> <br>
       
-      <input type="radio" id="ending4" name="endings" value="4 endings (secret one)">
+      <input type="radio" id="ending4" name="endings" value="4 endings (secret one)" required>
       <label for="ending4">4 endings (secret one)</label> <br>
       
-      <input type="radio" id="endingNone" name="endings" value="no endings">
+      <input type="radio" id="endingNone" name="endings" value="no endings" required>
       <label for="endingNone">no endings</label> <br>
+      <hr>
       
-      <br>
+      <label for="doyoulikeDsiadventures"> Do you like horror games: </label>
+      <input type="checkbox" id="doyoulikeDsiadventures" required>
+      <hr>
+      <label for="suggestions"> any suggestions for Dsi adventures?: </label>
+      <textarea id="suggestions" rows="5" cols="35">  </textarea>
+      <hr>
+      <label for="artupload"> Upload any concept art here: </label>
+      <input type="file" id="artupload" accept="image/*"> <br>
+      
       <!-- Added id="submitBtn" for the lock functionality -->
       <button type="submit" id="submitBtn">Submit your answer</button>
       <!-- Added id="resetBtn" for testing/clearing memory -->
       <button type="button" id="resetBtn">Reset Poll Memory</button>
     </fieldset>
   </form>
+  
 
   <!-- Added this div container so JavaScript can display the "You already voted" message -->
   <div id="pollResult" style="margin-top: 15px; font-weight: bold; color: red;"></div>
 
   <!-- Added a placeholder target for your screenshot grid script to prevent errors -->
-  <div id="screenshotGrid"></div>
+  <div id="screenshotGrid"> 
+  </div>
+  
 
   <!-- Links your JavaScript code file (assumed name: script.js) -->
-  <script src="script.js"></script>
+  <script src="answer.js"></script>
+  <label for="what are you">
 </body>
 </html>
