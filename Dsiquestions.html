@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=width-device">
-<meta name="description" content="question form">
-<meta name="keywords" content="question,poll,helpful>
-<title> Dsi poll's </title>
-  </head>
-  <body>
-  <h1> The questions </h1>
-  <p> so i know you answered a question before and that was on the wikipedia but this is a more dedicated poll site
-  </p>
-  <hR>
-  <form action="/sumbit-form/endpoint" method="post" enctype="multipart/form-data">
-  <fieldset id="better">
-    <legend>do you want to make dsi adventures a better game just answer these 5 questions</legend>
- <label for="art"> :If you had to choose between two art styles would you want </label>  <input type="text" id="art" list="artstyle" placeholder="abstract art" minlength="10" maxlength="20" required><datalist id="artstyle"> <option value="pixel art"> Pixel art</option> <option value="realistic art"> realistic art </option>
-   <option value="minimalistic art"> minimalistic art</option>
- </datalist>
-    <input type="submit">
-    <input type="reset">
-    <hr>
-    <p></p> How many endings do you think should be in dsi adventures 
-    <input type="radio" id="2" name="endings" value="2 endings">
-    <label for="2"> 2 endings </label> <br>
-    <input type="radio" id="3" name="endings" value="3 endings">
-    <label for="3"> 3 endings </label> <br>
-    <input type="radio" id="4" name="endings" value="4 endings (secret one)">
-    <label for="4"> 4 endings (secret one) </label> <br>
-    <input type="radio" id="none" name="endings" value="no endings">
-    <label for="none"> no endings </label> <br>
-    <button type="submit"> Sumbit your answer</button>
-    
-     
-  
-    
-  </body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="question form">
+  <!-- Fixed missing closing quote on the keywords attribute below -->
+  <meta name="keywords" content="question,poll,helpful">
+  <title>Dsi poll's</title>
+</head>
+<body>
+
+  <h1>The questions</h1>
+  <p>So I know you answered a question before and that was on Wikipedia, but this is a more dedicated poll site.</p>
+  <hr>
+
+  <!-- Added id="storyPoll" so JavaScript can find the form -->
+  <form id="storyPoll" action="/sumbit-form/endpoint" method="post" enctype="multipart/form-data">
+    <fieldset id="better">
+      <legend>Do you want to make dsi adventures a better game? Just answer these questions:</legend>
+      
+      <label for="art">:If you had to choose between two art styles would you want </label>  
+      <input type="text" id="art" list="artstyle" placeholder="abstract art" minlength="10" maxlength="20" required>
+      <datalist id="artstyle"> 
+        <option value="pixel art">Pixel art</option> 
+        <option value="realistic art">realistic art</option>
+        <option value="minimalistic art">minimalistic art</option>
+      </datalist>
+      
+      <hr>
+      
+      <p>How many endings do you think should be in dsi adventures?</p> 
+      <input type="radio" id="ending2" name="endings" value="2 endings">
+      <label for="ending2">2 endings</label> <br>
+      
+      <input type="radio" id="ending3" name="endings" value="3 endings">
+      <label for="ending3">3 endings</label> <br>
+      
+      <input type="radio" id="ending4" name="endings" value="4 endings (secret one)">
+      <label for="ending4">4 endings (secret one)</label> <br>
+      
+      <input type="radio" id="endingNone" name="endings" value="no endings">
+      <label for="endingNone">no endings</label> <br>
+      
+      <br>
+      <!-- Added id="submitBtn" for the lock functionality -->
+      <button type="submit" id="submitBtn">Submit your answer</button>
+      <!-- Added id="resetBtn" for testing/clearing memory -->
+      <button type="button" id="resetBtn">Reset Poll Memory</button>
+    </fieldset>
+  </form>
+
+  <!-- Added this div container so JavaScript can display the "You already voted" message -->
+  <div id="pollResult" style="margin-top: 15px; font-weight: bold; color: red;"></div>
+
+  <!-- Added a placeholder target for your screenshot grid script to prevent errors -->
+  <div id="screenshotGrid"></div>
+
+  <!-- Links your JavaScript code file (assumed name: script.js) -->
+  <script src="script.js"></script>
+</body>
+</html>
